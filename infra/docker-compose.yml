@@ -11,7 +11,7 @@ services:
   backend:
       # image: andyplo/foodgram_backend:v.21.12.22
       build:
-        context: ../backend
+        context: ../
         dockerfile: Dockerfile
       restart: always
       volumes:
