@@ -9,7 +9,7 @@ services:
       - ./.env
   
   backend:
-      image: sergey1997/foodgram_backend:1.1
+      # image: sergey1997/foodgram_backend:1.1
       build:
         context: ../backend
         dockerfile: Dockerfile
