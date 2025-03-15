@@ -11,7 +11,7 @@ services:
   backend:
       # image: sergey1997/foodgram_backend:latest
       build:
-        context: ./backend
+        context: ../backend
         dockerfile: Dockerfile
       restart: always
       volumes:
