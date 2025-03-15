@@ -11,7 +11,7 @@ services:
   backend:
       # image: andyplo/foodgram_backend:v.21.12.22
       build:
-        context: ../
+        context: ../backend
         dockerfile: Dockerfile
       restart: always
       volumes:
@@ -34,7 +34,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
       - ../frontend/build:/usr/share/nginx/html/
       - ../docs/:/usr/share/nginx/html/api/docs/
       - static_value:/var/html/static/
