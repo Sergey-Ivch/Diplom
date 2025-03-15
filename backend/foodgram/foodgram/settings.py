@@ -9,14 +9,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     'backend',
     '51.250.25.224',
-    'db'
+    'db',
 ]
 
 INSTALLED_APPS = [
