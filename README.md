@@ -125,10 +125,9 @@ sudo docker-compose exec web python manage.py createsuperuser
 
 Клонируйте репозиторий и перейдите в него в командной строке:
 ```
-git clone https://github.com/Sergey-Ivch/yamdb_final.git
-cd yamdb_final
+git clone https://github.com/Sergey-Ivch/Diplom.git
 ```
-Создайте файл .env командой `touch .env` и добавьте в него переменные окружения для работы с базой данных:
+Создайте файл .env в папке infra/ командой `touch .env` и добавьте в него переменные окружения для работы с базой данных:
 ```
 DB_ENGINE=django.db.backends.postgresql
 DB_NAME=postgres # имя базы данных
@@ -139,7 +138,7 @@ DB_PORT=5432 # порт для подключения к БД
 ```
 В папке проекта создайте образ:
 ```
-docker build -t username/imagename:version api_yamdb/.
+docker build -t username/imagename:version backend/.
 ```
 Соберите контейнеры:
 ```
@@ -162,23 +161,11 @@ docker-compose exec web python manage.py collectstatic --no-input
 ```
 docker-compose exec web python manage.py createsuperuser
 ```
-Для входа внутрь контейнера используйте команду `exec`:
-```
-docker-compose exec web sh
-```
-или
-```
-docker-compose exec web python manage.py shell
-```
-или:
-```
-docker exec -it <container_id> bash
-```
 
-### API YaMDb - эндпойнт:
+### API YaMDb - эндпойнт на локальном сервере:
 ```json
-http://158.160.37.180/admin/
-http://158.160.37.180/api/v1/categories/
+http://localhost/admin/
+http://localhost/recipes/
 все эндпоинты в статической документации
 ```
 
